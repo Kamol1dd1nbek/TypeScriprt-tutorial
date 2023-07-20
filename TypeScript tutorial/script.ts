@@ -216,7 +216,7 @@ function loggerDate(number: number): number {
 interface ICarim {
     name: string;
     color: string;
-    onSpeed: <T, G>(data: T) => G;
+    // onSpeed: <T, G>(data: T) => G;
 }
 
 const carim = {name: "Damas", color: "white"}
@@ -249,3 +249,4 @@ interface ImyCar {
 function loggerci<T extends ImyCar>(data: T): T {
     return data;
 }
+// .
