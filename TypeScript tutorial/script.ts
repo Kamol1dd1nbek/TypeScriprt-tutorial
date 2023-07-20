@@ -31,11 +31,24 @@ function logger(a: number | string): void{
     if (typeof a == "number") console.log(a.toFixed());
     else if (typeof a == "string") console.log(a.toLowerCase());
 }
+// type
+type CarType = {
+    name: string;
+    year: number;
+}
+
+type StrinOrNumber = string | number;
+
+// const ds: StrinOrNumber = false; // wrong
+
+
 
 // year is not required
-const logCar = (car: {name: string, year: number}): string => {
+const logCar = (car: CarType): string => {
     return `Car name: ${car.name}, year: ${car.year}`;
 }
 
-console.log(logCar({name: "BMW", year: 2017}))
-;
+console.log(logCar({name: "BMW", year: 2017}));
+
+
+
