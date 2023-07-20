@@ -82,3 +82,46 @@ interface I3DPoint extends IPoint {
 function logPoint(point: IPoint): void {
     const d3: I3DPoint = point as I3DPoint;
 }
+
+const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+
+
+// ============== Project==========
+
+// To TypeScript
+
+// {
+//     "name": "BMW",
+//     "color": "red",
+//     "isBallon": false,
+//     "speed": {
+//         "max": 330,
+//         "min": 100
+//     },
+//     "price": {
+//         "total": "20.000",
+//         "credit": "100",
+//         "discount": 10
+//     }
+// }
+
+// Answer
+
+interface ICar {
+    name: string;
+    color: string;
+    isBallon: boolean;
+    speed: ISpeed;
+    price: IPrice
+}
+
+interface ISpeed {
+    max: number;
+    min: number;
+}
+
+interface IPrice {
+    total: string;
+    credit: string;
+    discount: number;
+}
