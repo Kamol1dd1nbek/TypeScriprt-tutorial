@@ -171,3 +171,32 @@ const uzbIndex = Dictionary.Uz;
 const uzb = Dictionary[uzbIndex];
 console.log(uzb);
 
+enum Numbers {
+    One,
+    Two,
+    Three,
+    Four
+}
+
+function getUzbNumber(number: Numbers) {
+    switch (number) {
+        case Numbers.One:
+            return "bir";
+        case Numbers.Two:
+            return "ikki";
+        case Numbers.Three:
+            return "uch";
+        case Numbers.Four:
+            return "tort";
+        default: 
+        const a: never = number;
+    }
+}
+
+// tupple
+
+const array2: [number, number, string] = [1, 2, "hi"];
+
+array2.push(3);
+// console.log(array2[3]); // wrong
+
