@@ -1,15 +1,16 @@
-var firstname = "Sarvar"; // string
-var x = 9; // number
+"use strict";
+const firstname = "Sarvar"; // string
+let x = 9; // number
 // firstname = 9; // wrong
-var isMarried = false; // boolean
-var num = null; // null
-var a = undefined; // undefined
+const isMarried = false; // boolean
+const num = null; // null
+const a = undefined; // undefined
 // arrays
-var colors = ["yellow", "red"];
+let colors = ["yellow", "red"];
 // colors = ["sariq", 1, 2]; // wrong, only string
-var numbers = [1, 2, 3, 4]; // only numbers
+const numbers = [1, 2, 3, 4]; // only numbers
 // any
-var smth = 1;
+let smth = 1;
 smth = "qwer";
 smth = ["blue", 1];
 console.log(smth);
@@ -22,7 +23,44 @@ function logger(a) {
         console.log(a.toLowerCase());
 }
 // year is not required
-var logCar = function (car) {
-    return "Car name: ".concat(car.name, ", year: ").concat(car.year);
+const logCar = (car) => {
+    return `Car name: ${car.name}, year: ${car.year}`;
 };
-console.log(logCar({ name: "BMW", year: 2017 }));
+// as
+function logPoint(point) {
+    const d3 = point;
+}
+const canvas = document.getElementById("canvas");
+// literal type
+let car = "bmw";
+car = "mers";
+// literal car
+let Lcar;
+Lcar = "mers";
+function logger2(action) {
+    switch (action) {
+        case "hide":
+            return 1;
+        case "show":
+            return -1;
+    }
+}
+console.log(car);
+// enum
+var Dictionary;
+(function (Dictionary) {
+    Dictionary[Dictionary["Uz"] = 6] = "Uz";
+    Dictionary[Dictionary["Ru"] = 7] = "Ru";
+    Dictionary[Dictionary["En"] = 8] = "En";
+})(Dictionary || (Dictionary = {}));
+const runEnum = () => {
+    return 2;
+};
+var Decision;
+(function (Decision) {
+    Decision[Decision["yes"] = 1] = "yes";
+    Decision[Decision["no"] = runEnum()] = "no";
+})(Decision || (Decision = {}));
+const uzbIndex = Dictionary.Uz;
+const uzb = Dictionary[uzbIndex];
+console.log(uzb);

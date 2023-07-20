@@ -66,7 +66,7 @@ const logCar = (car: ICar): string => {
     return `Car name: ${car.name}, year: ${car.year}`;
 }
 
-console.log(logCar({name: "BMW", year: 2017}));
+// console.log(logCar({name: "BMW", year: 2017}));
 
 interface IPoint {
     x: number;
@@ -139,15 +139,35 @@ Lcar = "mers";
 // --
 type actionType = "show" | "hide";
 
-const div = document.getElementById("div") as HTMLDivElement;
-
 function logger2(action: actionType): 1 | -1 {
     switch (action) {
         case "hide":
             return 1;
-        case "hide":
+        case "show":
             return -1;
     }
 }
 
 console.log(car);
+
+// enum
+
+enum Dictionary  {
+    Uz = 6,
+    Ru,
+    En
+}
+
+const runEnum = () => {
+    return 2;
+}
+
+enum Decision {
+    yes = 1,
+    no = runEnum()
+}
+
+const uzbIndex = Dictionary.Uz;
+const uzb = Dictionary[uzbIndex];
+console.log(uzb);
+
