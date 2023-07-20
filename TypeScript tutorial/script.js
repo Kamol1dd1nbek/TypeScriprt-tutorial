@@ -21,6 +21,7 @@ function logger(a) {
     else if (typeof a == "string")
         console.log(a.toLowerCase());
 }
+// year is not required
 var logCar = function (car) {
     return "Car name: ".concat(car.name, ", year: ").concat(car.year);
 };

@@ -32,23 +32,53 @@ function logger(a: number | string): void{
     else if (typeof a == "string") console.log(a.toLowerCase());
 }
 // type
-type CarType = {
-    name: string;
-    year: number;
-}
+// type CarType = {
+//     name: string;
+//     year: number;
+// }
 
 type StrinOrNumber = string | number;
 
 // const ds: StrinOrNumber = false; // wrong
 
+interface ICar {
+    name: string;
+    year?: number;
+}
 
+interface IBmw extends ICar {
+    color: string;
+    extraBallons: boolean;
+}
+
+type CarType = {
+    name: string;
+    year?: number;
+}
+
+type BmwType = CarType & {
+    color: string;
+    extraBallons: boolean;
+}
 
 // year is not required
-const logCar = (car: CarType): string => {
+const logCar = (car: ICar): string => {
     return `Car name: ${car.name}, year: ${car.year}`;
 }
 
 console.log(logCar({name: "BMW", year: 2017}));
 
+interface IPoint {
+    x: number;
+    y: number;
+}
 
+interface I3DPoint extends IPoint {
+    z: number;
+}
 
+// as
+
+function logPoint(point: IPoint): void {
+    const d3: I3DPoint = point as I3DPoint;
+}
