@@ -125,3 +125,29 @@ interface IPrice {
     credit: string;
     discount: number;
 }
+
+// literal type
+
+let car: string = "bmw";
+car = "mers";
+
+// literal car
+
+let Lcar: "mers";
+Lcar = "mers";
+
+// --
+type actionType = "show" | "hide";
+
+const div = document.getElementById("div") as HTMLDivElement;
+
+function logger2(action: actionType): 1 | -1 {
+    switch (action) {
+        case "hide":
+            return 1;
+        case "hide":
+            return -1;
+    }
+}
+
+console.log(car);
