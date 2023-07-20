@@ -200,3 +200,52 @@ const array2: [number, number, string] = [1, 2, "hi"];
 array2.push(3);
 // console.log(array2[3]); // wrong
 
+// generics
+
+function loggerTime<T>(number: T): T {
+    console.log(new Date());  
+    return number;
+}
+loggerTime<number>(2);
+
+function loggerDate(number: number): number {
+    console.log(new Date());
+    return number
+}
+
+interface ICarim {
+    name: string;
+    color: string;
+    onSpeed: <T, G>(data: T) => G;
+}
+
+const carim = {name: "Damas", color: "white"}
+
+const myCar =  loggerTime<ICarim>(carim);
+
+// ---
+
+function loggerTime2<T>(data: T): T {
+    if (typeof data == "string") {
+        data.toLowerCase();
+    } else if (typeof data == "number") {
+        data.toFixed();
+    }
+    return data;
+}
+
+//  ---
+
+// class Car<T> {
+//         data: T;
+// }
+
+// const a = new Car<numbre>();
+
+interface ImyCar {
+    name: string;
+}
+
+function loggerci<T extends ImyCar>(data: T): T {
+    return data;
+}
